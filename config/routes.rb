@@ -1,7 +1,7 @@
 SampleApp::Application.routes.draw do
-  
-
-  resources :sessions, :only => [:create]
+  resources :users
+  resources :sessions,   only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
   # get 'register' => 'users#new', :as => 'register'
   # get 'login' => 'sessions#new', :as => 'login'
   # get 'logout' => 'sessions#destroy', :as => 'logout' resources :users
