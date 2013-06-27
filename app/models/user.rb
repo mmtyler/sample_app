@@ -22,5 +22,8 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
-  validates :name, exclusion: { in: [Hadi] }
+
+  invalid = /Hadi.*/
+  validates :name, presence: true, format: { without: invalid , :message => "Sorry, Hadi isn't allowed on this site"}
 end
+
