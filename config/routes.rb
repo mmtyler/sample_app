@@ -1,5 +1,10 @@
 SampleApp::Application.routes.draw do
-  resources :users
+  
+
+  resources :sessions, :only => [:create]
+  # get 'register' => 'users#new', :as => 'register'
+  # get 'login' => 'sessions#new', :as => 'login'
+  # get 'logout' => 'sessions#destroy', :as => 'logout' resources :users
 
   root to: 'static_pages#home'
 
